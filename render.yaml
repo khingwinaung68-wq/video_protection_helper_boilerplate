@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: video-protection-backend
+    env: python
+    buildCommand: "cd backend && pip install -r requirements.txt"
+    startCommand: "cd backend && python simple_main.py"
+    plan: free
+    
+  - type: web
+    name: video-protection-frontend
+    env: node
+    buildCommand: "cd frontend && npm install && npm run build"
+    startCommand: "cd frontend && npm start"
+    plan: free
